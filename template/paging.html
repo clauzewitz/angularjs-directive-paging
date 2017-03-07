@@ -1,0 +1,7 @@
+<ul class="mrp-paging" layout="row" layout-align="center">
+    <li ng-if="currentNum > 1" ng-click="action(1)"><<</li>
+    <li ng-if="currentNum > 1" ng-click="action(currentNum - 1)"><</li>
+    <li ng-class="{focus:(item.pageNum == currentNum)}" ng-repeat="item in itemList" ng-click="action(item.pageNum)">{{item.pageNum}}</li>
+    <li ng-if="currentNum < lastNum" ng-click="action(currentNum + 1)">></li>
+    <li ng-if="currentNum < lastNum" ng-click="action(lastNum)">>></li>
+</ul>

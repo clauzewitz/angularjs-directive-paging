@@ -1,0 +1,33 @@
+$colorWhite: #ffffff;
+$colorIbory: #f5f5f5;
+$colorSkyBlue: #5b8def;
+$colorDarkGray: #222222;
+
+mrp-paging {
+    ul {
+        padding: 0;
+        li {
+            border: solid 1px $colorIbory;
+            background-color: $colorWhite;
+            min-width: 30px;
+            min-height: 30px;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            line-height: 30px;
+            color: $colorDarkGray;
+            cursor: pointer;
+            outline: none;
+            list-style: none;
+        }
+        li:hover,
+        li.focus {
+            border: solid 1px $colorSkyBlue;
+            background-color: $colorSkyBlue;
+            color: $colorWhite;
+        }
+        li:not(:last-of-type) {
+            margin-right: 5px;
+        }
+    }
+}
