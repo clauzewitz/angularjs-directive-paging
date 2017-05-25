@@ -3,9 +3,9 @@ angular.module('paging', []).directive("paging", function() {
     	restrict: 'EA',
     	templateUrl: '../template/paging.html',
     	scope: {
-			currentNum: '=',
+			currentNum: '=?',
 			pageSize: '=',
-			lastNum: '=',
+			lastNum: '=?',
 			callback: '&'
 		},
 		link: linkBuild,
@@ -23,6 +23,8 @@ angular.module('paging', []).directive("paging", function() {
 
 	function pageBuild (scope, element, attr) {
 		scope.itemList = [];
+		scope.currentNum = scope.currentNum || 1;
+		scope.lastNum = scope.lastNum || 1;
 		if (angular.isString(scope.currentNum)) {
 			scope.currentNum = parseInt(scope.currentNum);
 		}
